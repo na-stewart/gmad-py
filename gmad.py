@@ -16,7 +16,7 @@ def execute(parent_dir, delete, gmad_type):
         create(parent_dir, delete == 'yes')
     else:
         raise TypeError('Gmad execution type must be extract or create.')
-    print ('Thanks for using GmadEAEC. Have a great day and I hope to see you soon!')
+    print ('Thanks for using GmadEEC. Have a great day and I hope to see you soon!')
 
 
 
