@@ -38,7 +38,7 @@
   <h3 align="center">GmadEEC</h3>
 
   <p align="center">
-    Easy Extractor and Creator for Linux. 
+    Easy Extractor and Creator For Linux. 
     <br />
     <br />
   </p>
