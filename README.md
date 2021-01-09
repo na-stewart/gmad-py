@@ -34,23 +34,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/sunset-developer/gmad-linux_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
-  <h3 align="center">YOUR_TITLE</h3>
+
+  <h3 align="center">GmadEEC</h3>
 
   <p align="center">
-    YOUR_SHORT_DESCRIPTION
-    <br />
-    <a href="https://github.com/sunset-developer/gmad-linux_name"><strong>Explore the docs »</strong></a>
+    Easy Extractor and Creator for Linux. 
     <br />
     <br />
-    <a href="https://github.com/sunset-developer/gmad-linux_name">View Demo</a>
-    ·
-    <a href="https://github.com/sunset-developer/gmad-linux_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/sunset-developer/gmad-linux_name/issues">Request Feature</a>
   </p>
 </p>
 
@@ -69,14 +60,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-EE
-
-### Built With
-
-* []()
-* []()
-* []()
-
+GmadEEC was created to allow for Garry's mod server developers' to easily extract or create multiple addons at one time. Currently, the most popular option, "Gmad - Easy Addon Extractor" only works with Windows and cannot create addons.
 
 
 <!-- GETTING STARTED -->
@@ -84,23 +68,15 @@ EE
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
-
 ### Installation
 
-1. Clone the repo
+* Install the newest release.
+```sh
+https://github.com/sunset-developer/gmad-linux
+```
+2. Clone repository.
 ```sh
 git clone https://github.com/sunset-developer/gmad-linux_name.git
-```
-2. Install NPM packages
-```sh
-npm install
 ```
 
 
@@ -108,31 +84,16 @@ npm install
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/sunset-developer/gmad-linux_name/issues) for a list of proposed features (and known issues).
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
+* You may open GmadEEC with the command below:
+```shell
+python gmad.py
+```
+* Follow instructions given:
+```shell
+Please enter the directory that your addons are located (/home/user/projects/addons): /home/user/projects/addons
+Would you like to delete on completion? (yes/no): no
+Please enter gmad execution type (extract/create): extract
+```
 
 <!-- LICENSE -->
 ## License
@@ -140,25 +101,12 @@ Contributions are what make the open source community such an amazing place to b
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
-
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Aidan Stewart - aidanstewart@sunsetdeveloper.com
 
-Project Link: [https://github.com/sunset-developer/gmad-linux_name](https://github.com/sunset-developer/gmad-linux_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
-
-
-
+Project Link: [https://github.com/sunset-developer/gmad-linux](https://github.com/sunset-developer/gmad-linux)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
