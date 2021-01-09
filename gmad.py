@@ -5,7 +5,7 @@ from gmad.core.extractor import extract
 def user_input():
     parent_dir = input("Please enter the directory that your addons are located (/home/user/projects/addons): ")
     delete = input("Would you like to delete on completion? (yes/no): ")
-    gmad_type = input("Please enter if you would like too extract or create an addon (extract/create): ")
+    gmad_type = input("Please enter gmad execution type (extract/create): ")
     execute(parent_dir, delete, gmad_type)
 
 
@@ -14,6 +14,8 @@ def execute(parent_dir, delete, gmad_type):
         extract(parent_dir, delete == 'yes')
     elif gmad_type == 'create':
         create(parent_dir, delete == 'yes')
+    else:
+        raise TypeError('Gmad execution type must be extract or create.')
 
 
 if __name__ == '__main__':
