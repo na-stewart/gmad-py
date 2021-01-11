@@ -73,7 +73,7 @@ To get a local copy up and running follow these simple steps.
 
 * Install the newest release.
 ```sh
-https://github.com/sunset-developer/gmad-linux
+https://github.com/sunset-developer/gmad-linux/releases
 ```
 2. Clone repository.
 ```sh
