@@ -61,6 +61,8 @@
 
 GmadEEC was created to allow for Garry's mod server developers' to easily extract or create multiple addons at one time. Currently, the most popular option, "Gmad - Easy Addon Extractor" only works with Windows and cannot create addons.
 
+This tool can be very useful for handling addons directly on a server, and especially if you choose to use Linux as your preferred operating system.
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
