@@ -90,7 +90,7 @@ git clone https://github.com/sunset-developer/gmad-linux_name.git
 python gmad.py
 ```
 * Follow instructions given:
-```shell
+```cmd
 Please enter the directory that your addons are located (/home/user/projects/addons): /home/user/projects/addons
 Would you like to delete on completion? (yes/no): no
 Please enter gmad execution type (extract/create): extract
