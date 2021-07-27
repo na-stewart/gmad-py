@@ -102,14 +102,6 @@ Please enter gmad execution type (extract/create): extract
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
-<!-- CONTACT -->
-## Contact
-
-Aidan Stewart - aidanstewart@sunsetdeveloper.com
-
-Project Link: [https://github.com/sunset-developer/gmad-linux](https://github.com/sunset-developer/gmad-linux)
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/sunset-developer/gmad-linux.svg?style=flat-square
