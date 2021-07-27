@@ -77,7 +77,7 @@ https://github.com/sunset-developer/gmad-linux/releases
 ```
 2. Clone repository.
 ```sh
-git clone https://github.com/sunset-developer/gmad-linux_name.git
+git clone https://github.com/sunset-developer/gmad-linux
 ```
 
 
