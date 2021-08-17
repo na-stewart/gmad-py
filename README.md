@@ -52,7 +52,6 @@
 * [About the Project](#about-the-project)
 * [Usage](#usage)
 * [License](#license)
-* [Contact](#contact)
 
 
 
