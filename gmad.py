@@ -17,14 +17,7 @@ def create(parent_dir, delete=False):
             os.system('lib/gmad_linux create -folder {0} -out {1}'.format(folder_to_create, folder_to_create + '.gma'))
             if delete:
                 os.rmdir(folder_to_create)
-
-
-def user_input():
-    parent_dir = input("Please enter the directory that your addons are located (/home/user/projects/addons): ")
-    delete = input("Would you like to delete on completion? (yes/no): ")
-    gmad_type = input("Please enter gmad execution type (extract/create): ")
-    execute(parent_dir, delete, gmad_type)
-
+   
 
 def execute(parent_dir, delete, gmad_type):
     if gmad_type == 'extract':
@@ -52,4 +45,7 @@ if __name__ == '__main__':
     print('Gmad Easy Extractor and Creator')
     print('Developed by sunset-developer. https://github.com/sunset-developer')
     print('------------------------------------------------------------------')
-    user_input()
+    parent_dir = input("Please enter the directory that your addons are located (/home/user/projects/addons): ")
+    delete = input("Would you like to delete on completion? (yes/no): ")
+    gmad_type = input("Please enter gmad execution type (extract/create): ")
+    execute(parent_dir, delete, gmad_type)
