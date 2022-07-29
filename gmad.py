@@ -5,7 +5,7 @@ def extract(parent_dir, delete=False):
     for f in os.listdir(parent_dir):
         if '.gma' in f:
             file_to_extract = parent_dir + '/' + f
-            os.system('lib/gmad_linux extract -file {0}'.format(file_to_extract))
+            os.system('bin/gmad_linux extract -file {0}'.format(file_to_extract))
             if delete:
                 os.remove(file_to_extract)
 
@@ -14,7 +14,7 @@ def create(parent_dir, delete=False):
     for d in os.listdir(parent_dir):
         if '.gma' not in d:
             folder_to_create = parent_dir + '/' + d
-            os.system('lib/gmad_linux create -folder {0} -out {1}'.format(folder_to_create, folder_to_create + '.gma'))
+            os.system('bin/gmad_linux create -folder {0} -out {1}'.format(folder_to_create, folder_to_create + '.gma'))
             if delete:
                 os.rmdir(folder_to_create)
    
