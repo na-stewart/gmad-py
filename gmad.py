@@ -43,7 +43,7 @@ if __name__ == '__main__':
  \______/                                   
                                         ''')
     print('Gmad Easy Extractor and Creator')
-    print('Developed by sunset-developer: https://github.com/sunset-developer')
+    print('https://github.com/sunset-developer')
     print('------------------------------------------------------------------')
     parent_dir = input("Please enter the directory that your addons are located (/home/user/projects/addons): ")
     delete = input("Would you like to delete on completion? (yes/no): ")
