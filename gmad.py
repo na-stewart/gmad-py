@@ -48,9 +48,8 @@ if __name__ == '__main__':
  \______/                                   
                                         ''')
     print('Gmad Easy Extractor and Creator')
-    print('Developed by sunset-developer. https://github.com/sunset-developer')
+    print('https://github.com/sunset-developer')
     print('------------------------------------------------------------------')
-    print(gmad_bin)
     if platform == "darwin":
         warnings.warn("OS X has not been tested!")
     parent_dir = input("Please enter the directory that your addons are located (/home/user/projects/addons): ")
