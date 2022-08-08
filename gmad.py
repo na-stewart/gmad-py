@@ -57,7 +57,7 @@ def create_addon_json(addon_json):
     data["tags"] = re.split(
         r", | (?!.*?, )",
         input(
-            f"What tags will be applied to your addon? You can choose only two. ({', '.join(possible_tags)}): "
+            f"What tags will be applied to your addon? You can choose up to two. ({', '.join(possible_tags)}): "
         ),
     )
     if 0 <= len(data["tags"]) > 2 or not bool(set(data["tags"]) & set(possible_tags)):
