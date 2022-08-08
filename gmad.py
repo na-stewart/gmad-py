@@ -50,8 +50,6 @@ if __name__ == '__main__':
     print('Gmad Easy Extractor and Creator')
     print('https://github.com/sunset-developer')
     print('------------------------------------------------------------------')
-    if platform == "darwin":
-        warnings.warn("OS X has not been tested!")
     parent_dir = input("Please enter the directory that your addons are located (/home/user/projects/addons): ")
     delete = input("Would you like to delete on completion? (yes/no): ")
     gmad_type = input("Please enter gmad execution type (extract/create): ")
