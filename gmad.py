@@ -120,7 +120,7 @@ def main():
         create(directory)
     else:
         raise TypeError("Invalid execution type")
-    print("Thanks for using gmad-py.")
+    input("Thanks for using gmad-py.")
 
 
 if __name__ == "__main__":
