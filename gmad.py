@@ -119,7 +119,7 @@ def main():
     elif execution_type == "create":
         create(directory)
     else:
-        raise TypeError("Execution type must be extract or create.")
+        raise TypeError("Invalid execution type")
     print("Thanks for using gmad-py.")
 
 
