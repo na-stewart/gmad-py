@@ -11,9 +11,6 @@
 -->
 
 
-
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -23,6 +20,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
+
 <!-- PROJECT LOGO -->
 <h3 align="center">gmad-py</h3>
 <p align="center">
@@ -30,8 +28,6 @@
     <br />
     <br />
 </p>
-
-
 
 
 <!-- TABLE OF CONTENTS -->
@@ -44,7 +40,6 @@
 * [License](#license)
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -52,10 +47,12 @@ gmad-py was created for you to easily extract or create multiple addons at one t
 Currently, the most popular option, "Gmad - Easy Addon Extractor" only works with Windows and cannot create addons.
 This repo has been reinstated and updated due to public demand.
 
+
 <!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
+
 
 ### Prerequisites
 
@@ -63,11 +60,13 @@ To get a local copy up and running follow these simple steps.
 
 https://www.python.org/downloads/
 
+
 ### Installation
 
 * Download the latest release.
 
 https://github.com/sunset-developer/gmad-py/releases
+
 
 ### Usage
 * Open gmad-py by simply double-clicking gmad.py or via command prompt.
@@ -75,6 +74,7 @@ https://github.com/sunset-developer/gmad-py/releases
 ```sh
 python gmad.py
 ```
+
 
 <!-- LICENSE -->
 ## License
