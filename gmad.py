@@ -1,58 +1,133 @@
+import json
 import os
+import re
 import subprocess
-import warnings
 from sys import platform
 
-gmad_bin = f"./bin/gmad_{'windows.exe' if platform == 'win32' else 'linux'}"
+
+def gmad_bin():
+    if platform == "linux" or platform == "linux2":
+        return "./bin/gmad_linux"
+    elif platform == "darwin":
+        return "./bin/gmad_osx"
+    elif platform == "win32":
+        return "./bin/gmad_windows.exe"
 
 
-def extract(parent_dir, delete=False):
-    for f in os.listdir(parent_dir):
-        if '.gma' in f:
-            file_to_extract = parent_dir + '/' + f
-            subprocess.call([gmad_bin, "extract", "-file", file_to_extract])
+def extract(directory, delete=False):
+    for f in os.listdir(directory):
+        if f.endswith(".gma"):
+            addon = os.path.join(directory, f)
+            print(f"Extracting gma file {addon}...")
+            subprocess.call([gmad_bin(), "extract", "-file", addon])
             if delete:
-                os.remove(file_to_extract)
+                os.remove(addon)
 
 
-def create(parent_dir, delete=False):
-    for d in os.listdir(parent_dir):
-        if '.gma' not in d:
-            folder_to_create = parent_dir + '/' + d
-            subprocess.call([gmad_bin, "create", "-folder", folder_to_create, "-out", f"{folder_to_create}.gma"])
+def create_addon_json(addon_json):
+    possible_types = [
+        "gamemode",
+        "map",
+        "weapon",
+        "vehicle",
+        "npc",
+        "tool",
+        "effects",
+        "model",
+    ]
+    possible_tags = [
+        "fun",
+        "roleplay",
+        "scenic",
+        "movie",
+        "realism",
+        "cartoon",
+        "water",
+        "comic",
+        "build",
+    ]
+    data = dict()
+    data["title"] = input("What will be the name of your addon?: ")
+    data["type"] = input(
+        f"What will be the type of your addon? You can choose only one. ({', '.join(possible_types)}): "
+    )
+    if data["type"] not in possible_types:
+        raise ValueError("Invalid addon type.")
+    data["tags"] = re.split(
+        r", | (?!.*?, )",
+        input(
+            f"What tags will be applied to your addons? You can choose only two. ({', '.join(possible_tags)}): "
+        ),
+    )
+    if 0 <= len(data["tags"]) > 2 or not bool(set(data["tags"]) & set(possible_tags)):
+        raise ValueError("Invalid addon tags.")
+    data["ignore"] = re.split(
+        r", | (?!.*?, )",
+        input(
+            "List the file names of the files you want to ignore in the addon, you may use wildcards: "
+        ),
+    )
+    with open(addon_json, "w") as f:
+        f.write(json.dumps(data))
+
+
+def create(directory, delete=False):
+    for d in os.listdir(directory):
+        addon = os.path.join(directory, d)
+        if os.path.isdir(addon):
+            print(f"Creating gma file {addon}.gma...")
+            addon_json = os.path.join(addon, "addon.json")
+            if not os.path.exists(addon_json):
+                proceed = (
+                    input("No addon.json file found, proceed? (yes/no): ") == "yes"
+                )
+                if proceed:
+                    create_addon_json(addon_json)
+                else:
+                    return
+            subprocess.call(
+                [
+                    gmad_bin(),
+                    "create",
+                    "-folder",
+                    addon,
+                    "-out",
+                    f"{addon}.gma",
+                ]
+            )
             if delete:
-                os.rmdir(folder_to_create)
+                os.rmdir(addon)
 
 
-def execute(parent_dir, delete, gmad_type):
-    if gmad_type == 'extract':
-        extract(parent_dir, delete == 'yes')
-    elif gmad_type == 'create':
-        create(parent_dir, delete == 'yes')
+def main():
+    print(
+        """                                        
+         /$$$$$$  /$$      /$$  /$$$$$$  /$$$$$$$ 
+        /$$__  $$| $$$    /$$$ /$$__  $$| $$__  $$
+       | $$  \__/| $$$$  /$$$$| $$  \ $$| $$  \ $$
+       | $$ /$$$$| $$ $$/$$ $$| $$$$$$$$| $$  | $$
+       | $$|_  $$| $$  $$$| $$| $$__  $$| $$  | $$
+       | $$  \ $$| $$\  $ | $$| $$  | $$| $$  | $$
+       |  $$$$$$/| $$ \/  | $$| $$  | $$| $$$$$$$/
+        \______/ |__/     |__/|__/  |__/|_______/ 
+       """
+    )
+    print("Garry's Mod Easy Addon Creator and Extractor")
+    print("https://github.com/sunset-developer")
+    print("---------------------------------------------------------")
+    directory = input(
+        "Please enter the directory that your addons are located (/home/user/projects/addons): "
+    )
+    delete = input("Would you like to delete on completion? (yes/no): ") == "yes"
+    execution_type = input("Please enter gmad execution type. (extract/create): ")
+    if execution_type == "extract":
+        extract(directory, delete)
+    elif execution_type == "create":
+        create(directory, delete)
     else:
-        raise TypeError('Gmad execution type must be extract or create.')
-    print('Thanks for using GmadEEC.')
+        raise TypeError("Execution type must be extract or create.")
+    print("Thanks for using gmad-py")
 
 
-if __name__ == '__main__':
-    print('''                                         /$$
-                                        | $$
-  /$$$$$$  /$$$$$$/$$$$   /$$$$$$   /$$$$$$$
- /$$__  $$| $$_  $$_  $$ |____  $$ /$$__  $$
-| $$  \ $$| $$ \ $$ \ $$  /$$$$$$$| $$  | $$
-| $$  | $$| $$ | $$ | $$ /$$__  $$| $$  | $$
-|  $$$$$$$| $$ | $$ | $$|  $$$$$$$|  $$$$$$$
- \____  $$|__/ |__/ |__/ \_______/ \_______/
- /$$  \ $$                                  
-|  $$$$$$/                                  
- \______/                                   
-                                        ''')
-    print('Gmad Easy Extractor and Creator')
-    print('https://github.com/sunset-developer')
-    print('------------------------------------------------------------------')
-    if platform == "darwin":
-        warnings.warn("OS X has not been tested!")
-    parent_dir = input("Please enter the directory that your addons are located (/home/user/projects/addons): ")
-    delete = input("Would you like to delete on completion? (yes/no): ")
-    gmad_type = input("Please enter gmad execution type (extract/create): ")
-    execute(parent_dir, delete, gmad_type)
+if __name__ == "__main__":
+    main()
