@@ -105,7 +105,7 @@ def main():
         \______/ |__/     |__/|__/  |__/|_______/ 
        """
     )
-    print("Garry's Mod Easy Addon Creator and Extractor")
+    print("Garry's Mod Easy Addon Creator and Extractor v1.0")
     print("https://github.com/sunset-developer")
     print("---------------------------------------------------------")
     directory = input(
