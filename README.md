@@ -73,7 +73,7 @@ https://github.com/sunset-developer/gmad-py/releases
 * Open gmad-py by simply double-clicking gmad.py or via command prompt.
 
 ```sh
-python3 gmad.py
+python gmad.py
 ```
 
 <!-- LICENSE -->
