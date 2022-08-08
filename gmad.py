@@ -79,6 +79,8 @@ def create(directory, delete=False):
             print(f"Creating gma file {addon}.gma...")
             addon_json = os.path.join(addon, "addon.json")
             if not os.path.exists(addon_json):
+                if input("Could not find addon.json, proceed? (yes/no): ") != "yes":
+                    continue
                 create_addon_json(addon_json)
             subprocess.call(
                 [
@@ -114,14 +116,14 @@ def main():
         "Please enter the directory that your addons are located (/home/user/example/addons): "
     )
     delete = input("Would you like to delete on completion? (yes/no): ") == "yes"
-    execution_type = input("Please enter gmad execution type. (extract/create): ")
+    execution_type = input("Do you want to extract or create gma files. (extract/create): ")
     if execution_type == "extract":
         extract(directory, delete)
     elif execution_type == "create":
         create(directory, delete)
     else:
         raise TypeError("Execution type must be extract or create.")
-    print("Thanks for using gmad-py")
+    print("Thanks for using gmad-py.")
 
 
 if __name__ == "__main__":
