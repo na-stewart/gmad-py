@@ -116,7 +116,9 @@ def main():
         "Please enter the directory that your addons are located (/home/user/example/addons): "
     )
     delete = input("Would you like to delete on completion? (yes/no): ") == "yes"
-    execution_type = input("Do you want to extract or create gma files. (extract/create): ")
+    execution_type = input(
+        "Do you want to extract or create gma files. (extract/create): "
+    )
     if execution_type == "extract":
         extract(directory, delete)
     elif execution_type == "create":
