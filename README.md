@@ -65,19 +65,16 @@ https://www.python.org/downloads/
 
 ### Installation
 
-* Clone repository.
-```sh
-git clone https://github.com/sunset-developer/gmad-linux
-```
+* Download the latest release.
+
+https://github.com/sunset-developer/gmad-py/releases
 
 ### Usage
-* Open gmad-py via command prompt:
+* Open gmad-py by simply double-clicking gmad.py or via command prompt.
 
 ```sh
 python3 gmad.py
 ```
-
-or by double-clicking gmad.py.
 
 <!-- LICENSE -->
 ## License
