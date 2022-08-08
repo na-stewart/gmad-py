@@ -24,18 +24,13 @@
 -->
 
 <!-- PROJECT LOGO -->
-<br />
+<h3 align="center">gmad-py</h3>
 <p align="center">
-
-
-  <h3 align="center">GmadEEC</h3>
-
-  <p align="center">
-    Easy Extractor and Creator For Linux. 
+    Garry's Mod Easy Addon Creator and Extractor.
     <br />
     <br />
-  </p>
 </p>
+
 
 
 
@@ -44,7 +39,8 @@
 
 * [About the Project](#about-the-project)
 * [Getting Started](#getting-started)
-* [Usage](#usage)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
 * [License](#license)
 
 
@@ -52,16 +48,20 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-GmadEEC was created to allow for Garry's mod server developers' to easily extract or create multiple addons at one time. Currently, the most popular option, "Gmad - Easy Addon Extractor" only works with Windows and cannot create addons.
-
-This tool can be very useful for handling addons directly on a server, and especially if you choose to use Linux as your preferred operating system.
-
-This repo has been reinstated due to public demand.
+gmad-py was created to allow for you to easily extract or create multiple addons at one time with any operating system.
+Currently, the most popular option, "Gmad - Easy Addon Extractor" only works with Windows and cannot create addons.
+This repo has been reinstated and updated due to public demand.
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+* Install Python.
+
+https://www.python.org/downloads/
 
 ### Installation
 
@@ -70,38 +70,16 @@ To get a local copy up and running follow these simple steps.
 git clone https://github.com/sunset-developer/gmad-linux
 ```
 
-<!-- USAGE EXAMPLES -->
-## Usage
+### Usage
+* Open gmad-py via command prompt:
 
-* You may open GmadEEC with the command below:
-```shell
-python gmad.py
+```sh
+python3 gmad.py
 ```
-* Follow instructions given:
-```
-Please enter the directory that your addons are located (/home/user/projects/addons): /home/user/projects/addons
-Would you like to delete on completion? (yes/no): no
-Please enter gmad execution type (extract/create): extract
-```
+
+or by double-clicking gmad.py.
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/sunset-developer/gmad-linux.svg?style=flat-square
-[contributors-url]: https://github.com/sunset-developer/gmad-linux/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/sunset-developer/gmad-linux.svg?style=flat-square
-[forks-url]: https://github.com/sunset-developer/gmad-linux/network/members
-[stars-shield]: https://img.shields.io/github/stars/sunset-developer/gmad-linux.svg?style=flat-square
-[stars-url]: https://github.com/sunset-developer/gmad-linux/stargazers
-[issues-shield]: https://img.shields.io/github/issues/sunset-developer/gmad-linux.svg?style=flat-square
-[issues-url]: https://github.com/sunset-developer/gmad-linux/issues
-[license-shield]: https://img.shields.io/github/license/sunset-developer/gmad-linux.svg?style=flat-square
-[license-url]: https://github.com/sunset-developer/gmad-linux/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/github_username
-[product-screenshot]: images/screenshot.png

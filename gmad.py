@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import shutil
 import subprocess
 from sys import platform
 
@@ -56,7 +57,7 @@ def create_addon_json(addon_json):
     data["tags"] = re.split(
         r", | (?!.*?, )",
         input(
-            f"What tags will be applied to your addons? You can choose only two. ({', '.join(possible_tags)}): "
+            f"What tags will be applied to your addon? You can choose only two. ({', '.join(possible_tags)}): "
         ),
     )
     if 0 <= len(data["tags"]) > 2 or not bool(set(data["tags"]) & set(possible_tags)):
@@ -78,13 +79,7 @@ def create(directory, delete=False):
             print(f"Creating gma file {addon}.gma...")
             addon_json = os.path.join(addon, "addon.json")
             if not os.path.exists(addon_json):
-                proceed = (
-                    input("No addon.json file found, proceed? (yes/no): ") == "yes"
-                )
-                if proceed:
-                    create_addon_json(addon_json)
-                else:
-                    return
+                create_addon_json(addon_json)
             subprocess.call(
                 [
                     gmad_bin(),
@@ -96,7 +91,7 @@ def create(directory, delete=False):
                 ]
             )
             if delete:
-                os.rmdir(addon)
+                shutil.rmtree(addon)
 
 
 def main():
@@ -116,7 +111,7 @@ def main():
     print("https://github.com/sunset-developer")
     print("---------------------------------------------------------")
     directory = input(
-        "Please enter the directory that your addons are located (/home/user/projects/addons): "
+        "Please enter the directory that your addons are located (/home/user/example/addons): "
     )
     delete = input("Would you like to delete on completion? (yes/no): ") == "yes"
     execution_type = input("Please enter gmad execution type. (extract/create): ")
