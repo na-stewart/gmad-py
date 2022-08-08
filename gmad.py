@@ -8,11 +8,11 @@ from sys import platform
 
 def gmad_bin():
     if platform == "linux" or platform == "linux2":
-        return "./bin/gmad_linux"
+        return "bin/gmad_linux"
     elif platform == "darwin":
-        return "./bin/gmad_osx"
+        return "bin/gmad_osx"
     elif platform == "win32":
-        return "./bin/gmad_windows.exe"
+        return "bin/gmad_windows.exe"
 
 
 def extract(directory):
