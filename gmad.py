@@ -15,14 +15,12 @@ def gmad_bin():
         return "./bin/gmad_windows.exe"
 
 
-def extract(directory, delete_on_creation=False):
+def extract(directory):
     for f in os.listdir(directory):
         if f.endswith(".gma"):
             addon = os.path.join(directory, f)
             print(f"Extracting gma file {addon}...")
             subprocess.call([gmad_bin(), "extract", "-file", addon])
-            if delete_on_creation:
-                os.remove(addon)
 
 
 def create_addon_json(addon_json):
@@ -72,7 +70,7 @@ def create_addon_json(addon_json):
         f.write(json.dumps(data))
 
 
-def create(directory, delete_on_creation=False):
+def create(directory):
     for d in os.listdir(directory):
         addon = os.path.join(directory, d)
         if os.path.isdir(addon):
@@ -92,8 +90,6 @@ def create(directory, delete_on_creation=False):
                     f"{addon}.gma",
                 ]
             )
-            if delete_on_creation:
-                shutil.rmtree(addon)
 
 
 def main():
@@ -115,14 +111,13 @@ def main():
     directory = input(
         "Please enter the directory that your addons are located (/home/user/example/addons): "
     )
-    delete_on_creation = input("Would you like to delete on completion? (yes/no): ") == "yes"
     execution_type = input(
         "Do you want to extract or create gma files. (extract/create): "
     )
     if execution_type == "extract":
-        extract(directory, delete_on_creation)
+        extract(directory)
     elif execution_type == "create":
-        create(directory, delete_on_creation)
+        create(directory)
     else:
         raise TypeError("Execution type must be extract or create.")
     print("Thanks for using gmad-py.")
