@@ -77,7 +77,7 @@ def create(directory):
             print(f"Creating gma file {addon}.gma...")
             addon_json = os.path.join(addon, "addon.json")
             if not os.path.exists(addon_json):
-                if input("Could not find addon.json, proceed? (yes/no): ") != "yes":
+                if input("Could not find addon.json, do you want to generate one? (yes/no): ") != "yes":
                     continue
                 create_addon_json(addon_json)
             subprocess.call(
