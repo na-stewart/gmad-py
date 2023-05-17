@@ -70,7 +70,7 @@ https://github.com/sunset-developer/gmad-py/releases
 
 
 ### Usage
-* Open gmad-py by simply double-clicking gmad.py or via command prompt.
+* Open gmad-py by simply double clicking the gmad.py file or via command prompt.
 
 ```sh
 python gmad.py
