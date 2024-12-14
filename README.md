@@ -46,7 +46,7 @@
 
 gmad-py was created for you to easily extract or create multiple addons at one time with any operating system.
 Currently, the most popular option, "Gmad - Easy Addon Extractor" only works with Windows and cannot create addons.
-This repo has been reinstated and updated due to public demand.
+This repo has been reinstated and updated due to popular demand.
 
 
 <!-- GETTING STARTED -->
