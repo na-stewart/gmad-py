@@ -106,7 +106,7 @@ def main():
        """
     )
     print("Garry's Mod Easy Addon Creator and Extractor v1.1")
-    print("https://github.com/sunset-developer")
+    print("https://github.com/na-stewart")
     print("---------------------------------------------------------")
     directory = input(
         "Please enter the directory that your addons are located (/home/user/example/addons): "
